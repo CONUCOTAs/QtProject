@@ -59,7 +59,8 @@ class SecondForm(QWidget):
         number = self.mine_number.text()
         if number.isnumeric() and int(float(number)) == float(number):
             self.mines = number
-        if self.row.isnumeric() and self.column.isnumeric() and self.mines.isnumeric():
+        if self.row.isnumeric() and self.column.isnumeric() and self.mines.isnumeric() and int(self.row) > 0\
+                and int(self.column) > 0 and 1 < int(self.mines) <= int(self.row) * int(self.column) - 2:
             print(2)
             self.saper = Saper(self.row, self.column, self.mines)
             print(3)
